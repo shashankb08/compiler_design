@@ -1,0 +1,24 @@
+//Comment
+/* No proble{{}}m . will ignore this */
+
+var i=0;
+var j=6;
+var jj="dd";
+var cars=[1];
+var text=2;
+for(i=0;i<10;i++)
+{
+text=text+1;
+while (j<8) {
+  j=j+1;text=text+1;
+}
+}
+
+
+for(i=0;i<4;i++){
+text=5;
+}
+
+while (j<8) {
+  text =11;
+}

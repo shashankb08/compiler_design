@@ -1,0 +1,127 @@
+Program:
+	empty
+	Statements Program
+
+Statements:
+	empty
+	Statement Statements
+
+Statement:
+	"for"(AssignExpression;CondExpression;UnaryExpression) CompoundStatement Statement
+	"while"(CondExpression)CompoundStatement Statement
+	AssignExpression Statement
+	CondExpression Statement
+	UnaryExpression Statement
+	DeclareStat Statement
+	AssignSpcl Statement
+	ArrayLiteral Statement
+	  
+CompoundStatement:
+	{ Statement }
+
+ArrayLiteral: 
+	[ ] end
+	[ list ] end
+
+Arraylist:
+	string Arraylist
+	num Arraylist
+	fl Arraylist
+	Expression Arraylist
+	keyvalue Arraylist
+
+
+DeclareStat:
+	"var" list
+
+list:
+	AssignExpression,list
+	list,AssignExpression
+	id,list
+	id
+
+AssignExpression:
+	empty
+	id=Expression
+
+Expression:
+	Expression+Q
+	Q
+
+Q:
+	Q*R
+	R
+
+R:
+	R/S
+	S
+
+S:
+	S-T
+	T
+
+T:
+	T^U
+	U
+
+U:
+	id
+	num
+	fl
+	string
+	(Expression)
+
+CondExpression:
+	empty
+	Expression CondOpt Expression
+	
+CondOpt:
+	logicalOpt
+	ComparOpt
+
+logicalOpt:
+	<
+	>
+	=
+	>=
+	<=
+	==
+	===
+	!=
+	!==
+	
+ComparOpt:
+	&&
+	||
+	!
+
+UnaryExpression:
+	id UnaryOpt
+	UnaryOpt id
+
+UnaryOpt:
+	++
+	--
+	!
+	
+AssignSpcl:
+	id AssgnSpclOpt id
+
+AssgnSpclOpt:
+	+=
+	-=
+	*=
+	/=
+
+
+
+
+
+
+
+
+
+
+
+
+
